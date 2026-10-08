@@ -1,0 +1,34 @@
+/* Estilos de la ventana emergente */
+.dialogo__fondo {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.dialogo {
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.dialogo__titulo {
+  margin: 0 0 8px;
+}
+
+.dialogo__mensaje {
+  margin: 0 0 16px;
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.dialogo__acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}

@@ -1,0 +1,31 @@
+/* Estilos de la tabla de usuarios */
+.tabla__contenedor {
+  overflow-x: auto; /* permite desplazar la tabla en pantallas pequeñas */
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla th,
+.tabla td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.tabla th {
+  background-color: #f9fafb;
+}
+
+.tabla__acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.tabla__vacia {
+  color: #6b7280;
+  text-align: center;
+}
