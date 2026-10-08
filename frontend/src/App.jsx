@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
 
 // Lista de pantallas a las que se puede navegar.
 const enlaces = [
@@ -29,9 +30,20 @@ function App() {
         />
       )}
 
-      {pagina !== 'login' && (
+      {pagina === 'registro' && (
+        <RegisterForm
+          roles={roles}
+          onRegistrar={(datos) => {
+            alert(`Registro válido. Bienvenido, ${datos.nombre}`);
+            setPagina('login');
+          }}
+          onIrALogin={() => setPagina('login')}
+        />
+      )}
+
+      {pagina === 'usuarios' && (
         <div className="pagina-prueba">
-          <h1>Pantalla: {pagina}</h1>
+          <h1>Pantalla: usuarios</h1>
           <p>Esta pantalla se construye en el siguiente paso.</p>
         </div>
       )}
