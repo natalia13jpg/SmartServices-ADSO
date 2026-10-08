@@ -1,0 +1,46 @@
+/* Estilos del campo de formulario */
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo__etiqueta {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.campo__contenedor {
+  position: relative;
+}
+
+.campo__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.campo__input--error {
+  border-color: #dc2626;
+}
+
+.campo__ver {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.campo__error {
+  display: block;
+  margin-top: 4px;
+  color: #dc2626;
+  font-size: 12px;
+}
