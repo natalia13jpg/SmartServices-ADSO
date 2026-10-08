@@ -102,13 +102,16 @@ function RegisterForm({ roles, onRegistrar, onIrALogin }) {
         error={errores.rol}
       />
 
-      <InputField
-        etiqueta="Nombre del negocio"
-        nombre="negocio"
-        valor={datos.negocio}
-        onChange={(e) => cambiar('negocio', e.target.value)}
-        error={errores.negocio}
-      />
+      {/* El campo del negocio solo aparece si el rol es Negocio */}
+      {datos.rol === 'Negocio' && (
+        <InputField
+          etiqueta="Nombre del negocio"
+          nombre="negocio"
+          valor={datos.negocio}
+          onChange={(e) => cambiar('negocio', e.target.value)}
+          error={errores.negocio}
+        />
+      )}
 
       <InputField
         etiqueta="Ciudad"
