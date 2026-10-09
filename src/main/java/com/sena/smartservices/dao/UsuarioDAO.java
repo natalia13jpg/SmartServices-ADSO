@@ -1,7 +1,5 @@
 package com.sena.smartservices.dao;
 
-import com.sena.smartservices.conexion.Conexion;
-import com.sena.smartservices.modelo.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sena.smartservices.conexion.Conexion;
+import com.sena.smartservices.modelo.Usuario;
+
+// Clase de acceso a datos (DAO) de la tabla usuarios.
 public class UsuarioDAO {
 
     // 1. CREATE: Registrar usuario
@@ -90,6 +92,27 @@ public class UsuarioDAO {
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error al eliminar usuario: " + e.getMessage());
+            return false;
+        }
+    }
+
+    // 5. LOGIN: Iniciar sesión.
+    // Busca en la base de datos un usuario activo con ese correo y esa contraseña.
+    // Devuelve true si existe (autenticación correcta) y false si no (error).
+    public boolean iniciarSesion(String correo, String password) {
+        String sql = "SELECT id_usuario FROM usuarios WHERE correo = ? AND password = ? AND estado = 1";
+
+        try (Connection con = Conexion.conectar();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, correo);
+            ps.setString(2, password);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next(); // true si encontró un registro que coincide
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al iniciar sesión: " + e.getMessage());
             return false;
         }
     }

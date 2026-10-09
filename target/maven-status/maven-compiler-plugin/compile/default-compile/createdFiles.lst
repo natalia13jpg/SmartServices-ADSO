@@ -2,4 +2,5 @@ com\mycompany\smartservices\SmartServices.class
 com\sena\smartservices\conexion\Conexion.class
 com\sena\smartservices\dao\UsuarioDAO.class
 com\sena\smartservices\modelo\Usuario.class
+com\sena\smartservices\vista\PruebaUsuario.class
 com\sena\smartservices\vista\Main.class
